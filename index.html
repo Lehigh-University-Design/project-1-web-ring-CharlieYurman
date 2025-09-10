@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Golf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* Hide the native cursor */
+    html, body { cursor: none; height: 100%; margin: 0; }
+
+    /* Demo page styles (optional) */
+    body {
+      display: grid;
+      place-items: center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #111;
+      color: #eee;
+      gap: 1rem;
+    }
+
+    /* The custom cursor */
+    .cursor {
+      position: fixed;
+      left: 0; top: 0;
+      width: 22px; height: 22px;
+      border: 2px solid #fff;        /* white circle */
+      border-radius: 50%;
+      pointer-events: none;           /* never block clicks */
+      transform: translate(-50%, -50%);
+      transition: transform 120ms ease, opacity 120ms ease;
+      z-index: 2147483647;            /* stay on top */
+      /* Keep it visible on light backgrounds */
+      filter: drop-shadow(0 0 2px rgba(255,255,255,.75));
+    }
+
+    /* Optional: shrink a bit on click */
+    .cursor--down { transform: translate(-50%, -50%) scale(.8); }
+
+    /* Optional: grow on interactive elements */
+    a:hover, button:hover, [role="button"]:hover { cursor: none; }
+    .cursor--hover { transform: translate(-50%, -50%) scale(1.3); }
+  </style>
+</head>
+
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Demo content (optional) -->
+  <main>
+    <h1>Golf.</h1>
+    <p>See What's In My Golf Bag <a href="#">HERE</a></p>
+    <button>Button</button>
+  </main>
+
+  <script>
+    (function () {
+      const cursor = document.getElementById('cursor');
+
+      // Follow the mouse
+      window.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+        cursor.style.opacity = '1';
+      });
+
+      // Hide when leaving the window
+      window.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+      });
+
+      // Click feedback
+      window.addEventListener('mousedown', () => cursor.classList.add('cursor--down'));
+      window.addEventListener('mouseup',   () => cursor.classList.remove('cursor--down'));
+
+      // Grow on interactive elements
+      const interactiveSelector = 'a, button, [role="button"], input, select, textarea, label';
+      window.addEventListener('mouseover', (e) => {
+        if (e.target.closest(interactiveSelector)) cursor.classList.add('cursor--hover');
+      });
+      window.addEventListener('mouseout', (e) => {
+        if (e.target.closest(interactiveSelector)) cursor.classList.remove('cursor--hover');
+      });
+    })();
+  </script>
+
+   <div class="post">
+            <h2>Golf</h2>
+            <img src="https://royaltyfreefootages.com/upload/video/golf%20ball,%20golf%20ball%20png,%20golf%20ball%20PNG%20image,%20transparent%20golf%20ball%20png%20image,%20golf%20ball%20png%20full%20hd%20images%20download_1659191925.png">
+            <p>This post element uses a class selector, .post. Classes are resuable</p>
+        </div>
+</body>
+</html>

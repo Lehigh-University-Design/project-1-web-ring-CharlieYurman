@@ -1,0 +1,178 @@
+:root {
+    --background-color: rgb(34, 143, 87);
+    --light-color: #ecd9d9;
+    --dark-color: #044546;
+    --link-color: #d987d6;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+main {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+#head { 
+    display: flex; 
+    justify-content: space-between;
+}
+
+#head h2 a {
+    color: var(--dark-color);
+    text-decoration: none; 
+}
+
+footer {
+    text-align: center;
+    justify-content: center;
+}
+
+/* our post class */
+.post{
+    border: 1px solid var(--dark-color); 
+    margin-bottom: 1em;
+    padding: .5em 1em;
+}
+
+.post a {
+    color: var(--link-color);
+    background-color: var(--light-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+#post {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin-bottom: 1em;
+    padding: .5em 1em;
+}
+
+.special-headline {
+    font-weight: 900;
+    color: var(--link-color)
+}
+
+#unique-headline {
+    font-weight: 600;
+    color:rgb(231, 97, 97);
+}
+
+/* these styles are shared between .post and #post */
+.post, #post {
+    .img-container {
+        aspect-ratio: 3/2;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    a {
+        color: var(--link-color);
+        background-color: var(--light-color);
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Lab 2 Styles */
+
+.hide-me {
+    display: none;
+}
+
+.post span {
+    color: aqua;
+}
+
+.block-div, .block {
+    display: block;
+    border-radius: 1em;
+    color: aqua;
+    background-color: black;
+    border: 1px solid var(--dark-color);
+    padding: 1em;
+}
+
+.block {
+    margin: 1em 0;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 0.2em 0.8em;
+    color: var(--dark-color); 
+    background-color: #d987d6;
+}
+
+/* Positioning */
+
+.static {
+    position: static;
+    border: 1px solid var(--dark-color);
+}
+
+.fixed {
+    z-index: 999;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    width: 200px;
+    padding: 1em;
+    background-color: blueviolet;
+}
+
+.relative {
+    position: relative;
+    left: 1em;
+    width: calc(100% - 1em);
+    border: 1px solid var(--dark-color);
+}
+
+.absolute-demo-holder {
+    position: relative;
+    border: 1px solid var(--dark-color);
+    width: 100%;
+    margin-bottom: 1em;
+    aspect-ratio: 4/3;
+}
+
+.absolute-bubble {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100px;
+    height: 100px;
+    background: #044546;
+    border-radius: 50px;
+
+    transform: translate(-50%, -50%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
+}
+
+.sticky-demo-holder {
+    overflow: scroll;
+    position: relative;
+    border: 1px solid var(--dark-color);
+    width: 100%;
+    margin-bottom: 1em;
+    height: 200px;
+    p {
+        margin: 1em;
+    }
+}
+
