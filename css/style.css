@@ -1,178 +1,139 @@
-:root {
-    --background-color: rgb(34, 143, 87);
-    --light-color: #ecd9d9;
-    --dark-color: #044546;
-    --link-color: #d987d6;
+/* Hide the native cursor */
+html,
+body {
+    cursor: none;
+    height: 100%;
+    margin: 0;
+}
+
+/* Demo page styles (optional) */
+body {
+    display: grid;
+    place-items: center;
+    background: #18532a;
+    color: #eee;
+    gap: 1rem;
 }
 
 body {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-main {
-    position: relative;
-    max-width: 1080px;
-    margin: 0 auto;
+    /* Set your image */
+    background-image: url(https://img.freepik.com/free-photo/green-fake-grass-background_53876-16313.jpg);
+
+    /* Make it cover the whole screen */
+    background-size: cover;
+
+    /* Keep it centered */
+    background-position: center;
+
+    /* Prevent tiling (repeating) */
+    background-repeat: no-repeat;
+
+    /* Make sure it fills the full height */
+    min-height: 100vh;
+    margin: 0;
 }
 
-#head { 
-    display: flex; 
-    justify-content: space-between;
-}
-
-#head h2 a {
-    color: var(--dark-color);
-    text-decoration: none; 
-}
-
-footer {
+h1 {
+    font-size: 200px;
+    /* change this number to make it bigger/smaller */
+    font-weight: bold;
     text-align: center;
-    justify-content: center;
+    margin-top: 50px;
 }
 
-/* our post class */
-.post{
-    border: 1px solid var(--dark-color); 
-    margin-bottom: 1em;
-    padding: .5em 1em;
+h3 {
+    font-size: 40px;
+    /* change this number to make it bigger/smaller */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.post a {
-    color: var(--link-color);
-    background-color: var(--light-color);
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-#post {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    margin-bottom: 1em;
-    padding: .5em 1em;
+h4 {
+    font-size: 40px;
+    /* change this number to make it bigger/smaller */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.special-headline {
-    font-weight: 900;
-    color: var(--link-color)
+h5 {
+    font-size: 40px;
+    /* change this number to make it bigger/smaller */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
 }
 
-#unique-headline {
-    font-weight: 600;
-    color:rgb(231, 97, 97);
-}
+/* The custom cursor */
 
-/* these styles are shared between .post and #post */
-.post, #post {
-    .img-container {
-        aspect-ratio: 3/2;
-    }
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-    a {
-        color: var(--link-color);
-        background-color: var(--light-color);
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-}
-
-/* Lab 2 Styles */
-
-.hide-me {
-    display: none;
-}
-
-.post span {
-    color: aqua;
-}
-
-.block-div, .block {
-    display: block;
-    border-radius: 1em;
-    color: aqua;
-    background-color: black;
-    border: 1px solid var(--dark-color);
-    padding: 1em;
-}
-
-.block {
-    margin: 1em 0;
-}
-
-.inline {
-    display: inline;
-}
-
-.inline-block {
-    display: inline-block;
-    text-transform: uppercase;
-    padding: 0.2em 0.8em;
-    color: var(--dark-color); 
-    background-color: #d987d6;
-}
-
-/* Positioning */
-
-.static {
-    position: static;
-    border: 1px solid var(--dark-color);
-}
-
-.fixed {
-    z-index: 999;
+.cursor {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
-    width: 200px;
-    padding: 1em;
-    background-color: blueviolet;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #fff;
+    /* white circle */
+    border-radius: 50%;
+    pointer-events: none;
+    /* never block clicks */
+    transform: translate(-50%, -50%);
+    transition: transform 120ms ease, opacity 120ms ease;
+    z-index: 2147483647;
+    /* stay on top */
+    /* Keep it visible on light backgrounds */
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, .75));
 }
 
-.relative {
-    position: relative;
-    left: 1em;
-    width: calc(100% - 1em);
-    border: 1px solid var(--dark-color);
+/* Optional: shrink a bit on click */
+.cursor--down {
+    transform: translate(-50%, -50%) scale(.8);
 }
 
-.absolute-demo-holder {
-    position: relative;
-    border: 1px solid var(--dark-color);
-    width: 100%;
-    margin-bottom: 1em;
-    aspect-ratio: 4/3;
+/* Optional: grow on interactive elements */
+a:hover,
+button:hover,
+[role="button"]:hover {
+    cursor: none;
 }
 
-.absolute-bubble {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.cursor--hover {
+    transform: translate(-50%, -50%) scale(3);
+}
 
+/* Regular Styles */
+
+.box {
     width: 100px;
     height: 100px;
-    background: #044546;
-    border-radius: 50px;
-
-    transform: translate(-50%, -50%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
-}
-
-.sticky-demo-holder {
-    overflow: scroll;
     position: relative;
-    border: 1px solid var(--dark-color);
-    width: 100%;
-    margin-bottom: 1em;
-    height: 200px;
-    p {
-        margin: 1em;
-    }
+    top: 10px;
+    /* move down */
+    left: 60px;
+    /* move right */
 }
 
+button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background: seagreen;
+      color: white;
+      cursor: pointer;
+    }
+
+    body {
+    font-family: sans-serif;
+    background-color: #2b5d24;
+    font-weight: bold;
+    .text-box {
+    margin-left: 44vw;
+   margin-top: 42vh;
+}
+}
+
+
+
+    
