@@ -1,11 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Golf Bag</title>
+    <meta charset="utf-8" />
+    <title>Golf.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div class="cursor" id="cursor"></div>
+
+    <main>
+        <h1>Golf.</h1>
+    </main>
+
+    <div class="post">
+        <h8>Bag: Titleist Players 4</h8>
+        <img src="https://greenfieldgolf.ca/cdn/shop/products/TB21SX1-214_01.png?v=1656362740">
+    </div>
+
+    <div class="post">
+        <h8>Driver: Taylormade RBZ</h8>
+        <img src="https://www.taylormadegolf.com/dw/image/v2/AAIS_PRD/on/demandware.static/-/Sites-tmag-master-catalog/en_US/v1757431986801/zoom/JN922_zoom.jpg?sw=900&sh=900&sm=fit">
+
+        <div class="post">
+            <h8>Irons: Titleist T-Series</h8>
+            <img src="https://todaysgolfer-images.bauersecure.com/wp-images/143831/786x524/01-titleist-t-series-irons-2023.jpg">
+        </div>
+    </div>
+
+    <div class="post">
+         <h8>Putter: Titleist</h8>
+         <img src="https://www.titleist.com/on/demandware.static/-/Library-Sites-TitleistSharedLibrary/default/dw19f79c01/images/clubs/24Phantom115-PDP-P1Hero-Mobile.jpg">
+    </div>
+       
     
-</body>
-</html>
+
+    <script>
+        (function () {
+            const cursor = document.getElementById('cursor');
+
+            // Follow the mouse
+            window.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursor.style.opacity = '1';
+            });
+
+            // Hide when leaving the window
+            window.addEventListener('mouseleave', () => {
+                cursor.style.opacity = '0';
+            });
+
+            // Click feedback
+            window.addEventListener('mousedown', () => cursor.classList.add('cursor--down'));
+            window.addEventListener('mouseup', () => cursor.classList.remove('cursor--down'));
+
+            // Grow on interactive elements
+            const interactiveSelector = 'a, button, [role="button"], input, select, textarea, label';
+            window.addEventListener('mouseover', (e) => {
+                if (e.target.closest(interactiveSelector)) cursor.classList.add('cursor--hover');
+            });
+            window.addEventListener('mouseout', (e) => {
+                if (e.target.closest(interactiveSelector)) cursor.classList.remove('cursor--hover');
+            });
+        })();
+    </script>
+    </body>
+
+    </html>

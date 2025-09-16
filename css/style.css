@@ -34,7 +34,7 @@ body {
 }
 
 h1 {
-    font-size: 200px;
+    font-size: 400px;
     /* change this number to make it bigger/smaller */
     font-weight: bold;
     text-align: center;
@@ -46,7 +46,7 @@ h3 {
     /* change this number to make it bigger/smaller */
     font-weight: bold;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 h4 {
@@ -62,7 +62,29 @@ h5 {
     /* change this number to make it bigger/smaller */
     font-weight: bold;
     text-align: center;
+    margin-top: -400px;
+}
+
+h6 {
+      font-size: 40px;
+    /* change this number to make it bigger/smaller */
+    font-weight: bold;
+    text-align: center;
     margin-top: 50px;
+}
+
+h7 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h8 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 80px;
 }
 
 /* The custom cursor */
@@ -116,12 +138,13 @@ button:hover,
 
 button {
       padding: 12px 24px;
-      font-size: 18px;
+      font-size: 20px;
       border: none;
-      border-radius: 6px;
-      background: seagreen;
+      border-radius: 30px;
+      background: rgb(33, 218, 113);
       color: white;
       cursor: pointer;
+      margin: -100;
     }
 
     body {
