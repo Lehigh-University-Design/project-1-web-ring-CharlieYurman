@@ -87,6 +87,38 @@ h8 {
     margin-top: 80px;
 }
 
+.post{
+    border: 1px solid var(--dark-color); 
+    margin-bottom: 1em;
+    padding: .5em 1em;
+}
+
+.post{
+    border: 1px solid var(--dark-color); 
+    margin-bottom: 1em;
+    padding: .5em 1em;
+}
+
+
+.post, #post {
+    .img-container {
+        aspect-ratio: 3/2;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    a {
+        color: var(--link-color);
+        background-color: var(--light-color);
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
 /* The custom cursor */
 
 .cursor {
@@ -147,6 +179,12 @@ button {
       margin: -100;
     }
 
+    button {
+        position: relative;
+        left: 0px;
+        top: -150px;
+    }
+
     body {
     font-family: sans-serif;
     background-color: #2b5d24;
@@ -158,5 +196,19 @@ button {
 }
 
 
+#image1 {
+    position: relative;
+      top: -450px;   /* move down */
+      left: 500px;  /* move right */
+      width: 800px;
+}
+
+#image2 {
+    position: relative;
+      top: 200px;   /* move down */
+      left: 200px;  /* move right */
+      width: 200px;
+
+}
 
     
